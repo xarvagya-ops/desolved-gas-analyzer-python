@@ -82,7 +82,7 @@ If you're not sure where to start, try:
 Writing Python functions for gas ratio calculations
 Creating API endpoints for frontend integration
 Adding sample datasets for testing
-Improving UI/UX
+Improving UI/UX - i want the ui like this [hindi typing test](https://www.typingway.com/online-typing/hindi-typing-test) website
 Writing documentation
 🧠 Future Scope
 AI-based fault prediction
