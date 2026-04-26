@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGA Power Transformer Fault Analysis</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DGA Power Transformer Fault Analysis</h1>
+            <p>Machine Learning-Based Dissolved Gas Analysis for Power Transformer Diagnostics</p>
+        </div>
+
+        <div class="content">
+            <div class="input-section">
+                <h2>Gas Concentration Input (ppm)</h2>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="h2">Hydrogen (H₂)</label>
+                        <input type="number" id="h2" step="0.01" placeholder="Enter H₂ concentration">
+                    </div>
+                    <div class="input-group">
+                        <label for="ch4">Methane (CH₄)</label>
+                        <input type="number" id="ch4" step="0.01" placeholder="Enter CH₄ concentration">
+                    </div>
+                    <div class="input-group">
+                        <label for="c2h6">Ethane (C₂H₆)</label>
+                        <input type="number" id="c2h6" step="0.01" placeholder="Enter C₂H₆ concentration">
+                    </div>
+                    <div class="input-group">
+                        <label for="c2h4">Ethylene (C₂H₄)</label>
+                        <input type="number" id="c2h4" step="0.01" placeholder="Enter C₂H₄ concentration">
+                    </div>
+                    <div class="input-group">
+                        <label for="c2h2">Acetylene (C₂H₂)</label>
+                        <input type="number" id="c2h2" step="0.01" placeholder="Enter C₂H₂ concentration">
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <button class="analyze-btn" onclick="analyzeGases()">Analyze Transformer Condition</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analyzing gas concentrations with ML algorithms...</p>
+            </div>
+
+            <div class="results-section" id="results">
+                <div class="gas-values">
+                    <h3>Input Gas Concentrations</h3>
+                    <div class="gas-grid" id="gasValues">
+                        <!-- Gas values will be populated here -->
+                    </div>
+                </div>
+                <div class="gas-values" style="background: darkcyan;">
+                    <h3 style="color: aliceblue">The Decision : </h3>
+                    <div class="gas-grid" id="finalVerdict" style="text-align: center; color: #fff">
+                        <!-- Gas values will be populated here -->
+                    </div>
+                </div>
+
+                <div class="results-grid">
+                    <div class="chart-container">
+                        <h3>Algorithm Confidance Comparison</h3>
+                        <canvas id="confidenceChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Fault Type Distribution</h3>
+                        <canvas id="faultChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="algorithms-table">
+                    <h3>ML Algorithm Results</h3>
+                    <div class="table-responsive">
+                        <table id="resultsTable">
+                            <thead>
+                                <tr>
+                                    <th>Algorithm</th>
+                                    <th>Predicted Fault</th>
+                                    <th>Confidence</th>
+                                    <th>Accuracy</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Results will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js" ></script>
+</body>
+</html>
